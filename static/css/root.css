@@ -1,0 +1,26 @@
+:root {
+    color: black;
+    --bg-color: white;
+    --bg-gradient: linear-gradient(120deg, #a8dadc 0%, #f1faee 100%);
+    --text-color: black;
+    --dark-blue: #1e88e5;
+    --light-blue: #74c0fc;
+    --profile-buttons: #e0e0e0;
+    --pill-color: #f1f8f5;
+    --shadow-color: 0, 0, 0;
+    --neutral: #374151;
+    --p-size: clamp(0.5rem, 0.5rem + 2vw, 1.25rem);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        color: #e0e0e0;
+        --bg-color: #121212;
+        --bg-gradient: linear-gradient(120deg, #1a1f25 0%, #264653 100%);
+        --text-color: #e0e0e0;
+        --profile-buttons: #1a2a24;
+        --pill-color: #1a2a24;
+        --shadow-color: 255, 255, 255;
+        --neutral: #b0bac6;
+    }
+}

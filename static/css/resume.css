@@ -1,0 +1,66 @@
+.resume-timeline {
+    max-width: 48rem;
+    margin: 0 auto 3rem;
+}
+
+.timeline-item {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.timeline-item .tl-year {
+    font-weight: 700;
+    color: var(--dark-blue);
+    min-width: 7rem;
+}
+
+.timeline-item .tl-body h3 {
+    margin: .1rem 0 .4rem;
+    font-size: var(--p-size);
+}
+
+.timeline-item .tl-body li {
+    line-height: 1.4;
+    padding-bottom: 0.6rem;
+}
+
+.resume-extras {
+    text-align: center;
+}
+
+.resume-extras p {
+    line-height: 1.6;
+}
+
+@media (max-width: 929px) {
+    .timeline-item {
+        flex-flow: column nowrap;
+    }
+
+    .timeline-item .tl-body h3 {
+        margin-bottom: 0.8rem;
+        font-weight: 600;
+    }
+
+    .timeline-item .tl-body li {
+        font-size: var(--p-size);
+    }
+
+    .skills {
+        padding: 1.5rem 0.5rem 1rem 0.5rem;
+    }
+
+    .dash {
+        display: none;
+    }
+
+    .timeline-break:after {
+        content: "\a";
+        white-space: pre;
+    }
+
+    .resume-extras p {
+        margin-bottom: 1rem;
+    }
+}

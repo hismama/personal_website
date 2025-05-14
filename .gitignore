@@ -1,0 +1,33 @@
+# Binaries
+*.exe
+*.dll
+*.so
+*.dylib
+*.bin
+*.o
+*.a
+
+# Vendor directory (if you are not committing vendor dependencies)
+/vendor/
+
+# Go test binary
+*.test
+
+# IDE settings
+.idea/
+.vscode/
+
+# Logs and temporary files
+*.log
+*.tmp
+*.swp
+.DS_Store
+Thumbs.db
+
+# Environment variables
+.env
+
+# Dependency management lock files (if applicable)
+go.sum
+
+/static/min/*

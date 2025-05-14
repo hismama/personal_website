@@ -1,0 +1,179 @@
+{{ define "title" }}Projects{{ end }}
+{{ define "description" }}Explore Reid Richards' featured development projects—real-world code, GitHub repos, and Go-powered web tools.{{ end }}
+{{ define "og_title" }}Reid Richards | Developer Projects & Code Work{{ end }}
+{{ define "og_description" }}A curated set of Reid Richards' software projects, from concurrency-focused Go apps to Django SaaS platforms and UI minimalism.{{ end }}
+{{ define "twitter_title" }}Reid Richards | Developer Projects & Code Work{{ end }}
+{{ define "twitter_description" }}A curated set of Reid Richards' software projects, from concurrency-focused Go apps to Django SaaS platforms and UI minimalism.{{ end }}
+
+{{ define "head" }}
+    <link rel="stylesheet" href="/static/css/projects.css">
+{{ end }}
+
+{{ define "content" }}
+    <section class="hero">
+        <h1 class="title">Projects&nbsp;&nbsp;·&nbsp;&nbsp;Built Lean</h1>
+        <p class="tag">
+            Go‑powered &nbsp;•&nbsp; Cloud‑native &nbsp;•&nbsp; Obsessed with performance
+        </p>
+    </section>
+
+    <section class="summary card">
+        <h2>Why These Projects Matter</h2>
+        <p>
+            Every item below solves a real pain‑point with the smallest possible
+            footprint—often distilled to a single binary, static bundle, or minimal deployment target. The goal is to
+            prove that <strong>great UX</strong> and <strong>high efficiency</strong> are not mutually
+            exclusive. Whether it’s generating GS1&nbsp;EPCIS barcodes in&nbsp;2 sec or
+            serving this very site for &lt;$1 /mo, each project showcases my bias
+            toward <strong>lean code, rigorous testing, </strong>and <strong>measurable impact</strong>.
+        </p>
+    </section>
+
+    <section class="projects-grid">
+
+        <!-- Personal Website -->
+        <article class="proj card">
+            <div class="proj-img-container">
+                <picture>
+                    <source srcset="/static/img/projects/professional_website_small.png" media="(max-width: 600px)">
+                    <img src="/static/img/projects/professional_website.png" alt="Screenshot of personal website"
+                         class="proj-img">
+                </picture>
+            </div>
+            <h2 class="proj-title">Professional&nbsp;Website&nbsp;<small>(this site)</small></h2>
+            <div class="proj-body">
+                <p class="proj-desc" tabindex="0">
+                    This site showcases a dynamic Go powered architecture with the simplicity and performance of a
+                    static site. Each page is rendered server-side using Go templates, allowing shared state across
+                    routes—such as an active game timer, randomized gopher interactions, and a global scoreboard—all
+                    without relying on JavaScript frameworks.
+                    <br/><br/>
+                    Pages load instantly, maintain consistent layout with or without JavaScript, and preserve full
+                    accessibility. Interactive features like fun fact easter eggs and a live game are seamlessly
+                    integrated with minimal, purpose-built JavaScript.
+                </p>
+                <details class="proj-highlights" open>
+                    <summary><span>▼</span> Key highlights</summary>
+                    <ul>
+                        <li>Server‑rendered HTML with shared gameplay state</li>
+                        <li>Zero JS frameworks—progressive enhancement only</li>
+                        <li>Accessible, responsive, CDN‑friendly</li>
+                        <li>Built with Go’s net/http and html/template</li>
+                    </ul>
+                </details>
+                <ul class="proj-tags">
+                    <li>Go</li>
+                    <li>App&nbsp;Engine</li>
+                    <li>Firestore</li>
+                    <li>HTML + CSS</li>
+                </ul>
+                <div class="proj-links">
+                    <a href="https://mrreidrichards.com" target="_blank" class="btn-outline">Live Demo</a>
+                    <a href="https://github.com/hismama/personal_website" target="_blank" class="github"
+                       rel="noopener noreferrer"><img
+                                src="/static/img/svg/github.svg" alt="GitHub Repo"
+                                title="GitHub Repo"></a>
+                </div>
+            </div>
+        </article>
+
+        <!-- EPCISBarcodes -->
+        <article class="proj card">
+            <div class="proj-img-container">
+                <picture>
+                    <source srcset="/static/img/projects/epcis_barcodes_small.png" media="(max-width: 600px)">
+                    <img src="/static/img/projects/epcis_barcodes.png" alt="EPCISBarcodes UI" class="proj-img">
+                </picture>
+            </div>
+            <h2 class="proj-title">EPCISBarcodes.com</h2>
+            <div class="proj-body">
+                <p class="proj-desc" tabindex="0">
+                    Production-grade barcode generation service built in Go, designed to process EPCIS 1.2-compliant XML
+                    uploads into Code 128 and GS1 DataMatrix barcode images at scale. Outputs are structured by Lot and
+                    packing hierarchy and made available via signed URLs.
+                </p>
+                <details class="proj-highlights" open>
+                    <summary><span>▼</span> Key highlights</summary>
+                    <ul>
+                        <li>Deployed on App Engine using goroutines for non-blocking processing and concurrent barcode
+                            rendering
+                        </li>
+                        <li>Client uploads trigger validation, SGTIN extraction, and background job creation with unique
+                            job IDs
+                        </li>
+                        <li>Implements long-polling and client-side status tracking tied to secure job tokens</li>
+                        <li>Barcode images include human-readable text, structured by GS1 Lot and hierarchy metadata
+                        </li>
+                        <li>Output folders are zipped and stored in GCS; signed URLs auto-expire after 24 hours</li>
+                        <li>Written in Go using `net/http`, `html/template`, and zero external JavaScript frameworks
+                        </li>
+                    </ul>
+                </details>
+                <ul class="proj-tags">
+                    <li>Go</li>
+                    <li>Goroutines</li>
+                    <li>JavaScript</li>
+                    <li>App&nbsp;Engine</li>
+                    <li>Google Cloud Storage</li>
+                    <li>HTML + CSS</li>
+                </ul>
+                <div class="proj-links">
+                    <a href="https://epcisbarcodes.com" target="_blank" class="btn-outline">Live Demo</a>
+                    <a href="https://cdn.epcisbarcodes.com/epcisbarcodes/SampleBarcodes.zip" target="_blank"
+                       class="btn-outline2">Sample Images</a>
+                    <a href="/assets/EPCIS12_Lot-Tester.xml" download
+                       target="_blank" class="btn-outline">Try For Yourself</a>
+                </div>
+            </div>
+        </article>
+
+        <!-- Jenkins APIs -->
+        <article class="proj card">
+            <div class="proj-img-container jenkins-img-container">
+                <img class="proj-img jenkins-img" src="/static/img/projects/jekins_project_header.png"
+                     alt="Jenkins Python Project Product Image">
+            </div>
+            <h2 class="proj-title">Jenkins Batch Config</h2>
+            <div class="proj-body">
+                <p class="proj-desc" tabindex="0">
+                    This project aims to streamline interactions with Jenkins via its API, allowing users to perform
+                    batch operations such as building, backing up, restoring, and editing Jenkins jobs.
+                </p>
+                <details class="proj-highlights" open>
+                    <summary><span>▼</span> Key highlights</summary>
+                    <ul>
+                        <li>Build Jenkins jobs using the Jenkins API.</li>
+                        <li>Backup and restore Jenkins jobs configurations in batches.</li>
+                        <li>Modify Jenkins job configurations using a dictionary-based approach.</li>
+                        <li>All user inputs are centralized in `inputs.py`.</li>
+                        <li>Use environment variables to securely authenticate with Jenkins.</li>
+                    </ul>
+                </details>
+                <ul class="proj-tags">
+                    <li>Python</li>
+                    <li>OOP</li>
+                    <li>Jekins&nbsp;API</li>
+                    <li>DevOps</li>
+                    <li>REST</li>
+                    <li>CSV&nbsp;Export</li>
+                    <li>Pandas</li>
+                    <li>Requests</li>
+                </ul>
+                <div class="proj-links">
+                    <a href="https://github.com/hismama/jenkins-api-project" target="_blank" class="github"
+                       rel="noopener noreferrer"><img
+                                src="/static/img/svg/github.svg" alt="GitHub Repo"
+                                title="GitHub Repo"></a>
+                </div>
+            </div>
+        </article>
+
+
+        <article class="proj card coming">
+            <div class="proj-coming">Next project <br>loading…</div>
+        </article>
+
+    </section>
+{{ end }}
+
+{{ template "base_fullwidth" . }}

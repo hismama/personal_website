@@ -1,0 +1,71 @@
+.gopher-banner {
+    position: fixed;
+    top: 2.4rem;
+    right: 7rem;
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+    padding: .5rem .9rem;
+    border: 1px solid var(--profile-buttons);
+    background: var(--bg-color);
+    border-radius: 8px;
+    font-family: system-ui, sans-serif;
+    font-size: 1.25rem;
+    box-shadow: 0 4px 8px rgba(var(--shadow-color), .08);
+    z-index: 150;
+}
+
+.gopher-icon {
+    width: 2rem;
+    height: 2rem;
+}
+
+.counts .row {
+    display: flex;
+    gap: .35rem;
+    align-items: center;
+}
+
+.label {
+    font-size: 1rem;
+    color: var(--neutral);
+    font-weight: 500;
+}
+
+.score {
+    min-width: 3ch;
+    text-align: right;
+    font-weight: 700;
+}
+
+.s-green {
+    color: #1dd3b0;
+}
+
+.s-blue {
+    color: #3b82f6;
+}
+
+.score.bump {
+    animation: pop .35s ease-out;
+}
+
+/* pulse effect */
+@keyframes pop {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.18);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@media (max-width: 929px) {
+    .gopher-banner {
+        top: 5px;
+        right: 5px;
+    }
+}

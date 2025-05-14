@@ -1,0 +1,92 @@
+.race-flex {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    display: flex;
+    flex-flow: column nowrap;
+    z-index: 180;
+}
+
+#race-countdown {
+    display: none;
+}
+
+.race-status {
+    position: relative;
+    --size: clamp(6rem, 12vw, 10rem);
+    width: var(--size);
+    height: var(--size);
+}
+
+.ring {
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg);
+}
+
+.track {
+    fill: none;
+    stroke: #ddd;
+    stroke-width: 10;
+}
+
+.progress {
+    fill: none;
+    stroke-width: 10;
+    stroke-linecap: round;
+    transition: stroke 0.3s linear;
+    /* 2πr r=45 */
+    stroke-dasharray: 300;
+}
+
+.timer-stack {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    line-height: 1;
+}
+
+.digits {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: calc(var(--size) * .35);
+    font-weight: 700;
+    font-family: 'Inter', sans-serif;
+    color: var(--neutral);
+    text-shadow: 0 0 6px rgba(var(--shadow-color), .2);
+    transition: transform .15s;
+}
+
+.digits.pulse {
+    transform: translate(-50%, -54%) scale(1.15);
+}
+
+#race-score {
+    position: absolute;
+    top: 68%;
+    left: 50%;
+    margin-top: 1.5rem;
+    transform: translateX(-50%);
+    font-size: calc(var(--size) * .25);
+    font-weight: 600;
+    color: var(--dark-blue);
+    pointer-events: none;
+    transition: opacity .2s;
+}
+
+@media (max-width: 929px) {
+    .digits {
+        font-size: calc(var(--size) * .35);
+    }
+
+    #race-score {
+        font-size: calc(var(--size) * .24);
+        margin-top: 1rem;
+    }
+}

@@ -1,0 +1,72 @@
+{{ define "title" }}Home{{ end }}
+{{ define "og_title" }}Reid Richards | Software Engineer{{ end }}
+{{ define "og_description" }}Minimal, blazing‑fast portfolio built with Go and Google Cloud. Projects, metrics, and a playful gopher hunt.{{ end }}
+{{ define "twitter_title" }}Reid Richards | Software Engineer{{ end }}
+{{ define "twitter_description" }}Minimal, blazing‑fast portfolio built with Go and Google Cloud. Projects, metrics, and a playful gopher hunt.{{ end }}
+
+{{ define "head" }}
+    <link rel="stylesheet" href="/static/css/home.css">
+{{ end }}
+
+{{ define "content" }}
+
+    <div class="home-main">
+
+        <div class="hero-strip"></div>
+
+        <h1 class="hero-title">Hi, I'm Reid&nbsp;Richards</h1>
+        <h2 class="subtitle">Full Stack Engineer <span class="accent-black">|</span> Cloud &amp; Serialization
+            Specialist</h2>
+
+        <p class="power-statement">
+            I design lean, fast web platforms that scale on day one.
+            My code currently powers pharmaceutical supply-chains, moving millions of serialized items—reliably and
+            securely.
+        </p>
+
+        <section class="metrics">
+            <div class="metric">
+                <span class="num" data-val="18">18</span>
+                <small>pts&nbsp;/&nbsp;sprint</small>
+            </div>
+            <div class="metric">
+                <span class="num" data-val="80">80 %</span>
+                <small>manual&nbsp;QA&nbsp;↓</small>
+            </div>
+            <div class="metric">
+                <span class="num" data-val="65">65 %</span>
+                <small>faster&nbsp;page-load</small>
+            </div>
+            <div class="metric">
+                <span class="num">30 %</span>
+                <small>AWS&nbsp;cost&nbsp;↓</small>
+            </div>
+        </section>
+
+        <ul class="stack">
+            <li>Python</li>
+            <li>Go</li>
+            <li>Django</li>
+            <li>TypeScript</li>
+            <li>JavaScript</li>
+            <li>AWS</li>
+            <li>Docker</li>
+            <li>Redis</li>
+            <li>Celery</li>
+            <li>MySQL</li>
+            <li>Git</li>
+            <li>Jenkins</li>
+        </ul>
+
+        <h3 class="philo-heading">Development&nbsp;Philosophy</h3>
+        <ul class="philosophy-list">
+            <li>Design for performance first; polish second.</li>
+            <li>Start simple; layer complexity only when necessary.</li>
+            <li>Code must be clear, purposeful, easy to maintain.</li>
+            <li>Every optimization matters, no matter how small.</li>
+        </ul>
+
+    </div>
+{{ end }}
+
+{{ template "base_fullwidth" . }}

@@ -1,0 +1,37 @@
+{{ define "title" }}Game{{ end }}
+{{ define "description" }}A browser-based gopher chase game hidden across Reid Richards’ portfolio. Start the race on this page or find the gopher on others.{{ end }}
+{{ define "og_title" }}Catch the Gopher | Reid Richards{{ end }}
+{{ define "og_description" }}Catch the gopher as it randomly appears across the site. Score points, chase records, and enjoy a little chaos in Go-powered minimalism.{{ end }}
+{{ define "twitter_title" }}Catch the Gopher | Reid Richards{{ end }}
+{{ define "twitter_description" }}Catch the gopher as it randomly appears across the site. Score points, chase records, and enjoy a little chaos in Go-powered minimalism.{{ end }}
+
+{{ define "head" }}
+    <link rel="stylesheet" href="/static/css/game.css">
+{{ end }}
+
+{{ define "content" }}
+    <section class="hero">
+        <div class="hero-strip"></div>
+        <h1 class="title">30‑Second Gopher Hunt</h1>
+        <p class="tag">
+            Find the gopher as he navigates the main pages of my site!
+        </p>
+        <div class="scoreboard card gopher-frame">
+                <div class="score-row">
+                    <span class="game-label">Your&nbsp;best</span>
+                    <span id="session-race" class="score-value s-green">{{ .Data.RaceHigh }}</span>
+                </div>
+                <div class="score-row">
+                    <span class="game-label">Site&nbsp;record</span>
+                    <span id="global-race" class="score-value s-blue">{{ .Data.Global }}</span>
+                </div>
+                <span class="gopher-bl" aria-hidden="true"></span>
+                <span class="gopher-br" aria-hidden="true"></span>
+            </div>
+        <button id="start-race-btn" data-mode="game">
+            Start 30&nbsp;sec Race
+        </button>
+    </section>
+{{ end }}
+
+{{ template "base_fullwidth" . }}

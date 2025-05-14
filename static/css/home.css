@@ -1,0 +1,120 @@
+.home-main {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.6rem;
+}
+
+.hero-title {
+    font-size: clamp(2.2rem, 3.6vw, 3.4rem);
+    font-weight: 700;
+    margin: 1rem 0;
+}
+
+.subtitle {
+    font-size: clamp(1.2rem, 2.2vw, 1.8rem);
+    color: var(--dark-blue);
+}
+
+.power-statement {
+    font-size: var(--p-size);
+    line-height: 1.6rem;
+    max-width: 55ch;
+    margin: 1.5rem auto 2.5rem;
+}
+
+.metrics {
+    display: flex;
+    justify-content: center;
+    gap: clamp(1.1vw, 2.2vw, 2.6vw);
+    margin-bottom: 2.2rem;
+}
+
+.metric {
+    font-size: 1.25rem;
+    text-align: center;
+}
+
+.num {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1565c0
+}
+
+.metric small {
+    font-size: .9rem;
+    white-space: nowrap
+}
+
+@keyframes countUp {
+    from {
+        opacity: 0;
+        transform: translateY(15%)
+    }
+    to {
+        opacity: 1;
+        transform: none
+    }
+}
+
+.metrics .num {
+    animation: countUp .6s ease-out .1s both
+}
+
+.stack {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: .6rem;
+    max-width: 32rem;
+    margin: auto auto 1rem;
+    padding: .5rem 0;
+}
+
+.stack li {
+    background: var(--pill-color);
+    padding: .35rem .8rem;
+    border-radius: 9999px;
+    font-size: .9rem;
+}
+
+.accent-black {
+    color: var(--text-color);
+    font-weight: 700;
+    margin: 0 .5rem
+}
+
+.philo-heading {
+    font-size: 1.5rem;
+    text-align: center;
+    color: #1565c0;
+    margin-bottom: 1rem;
+    padding-top:2rem;
+    border-top:1px solid rgba(var(--shadow-color),.2);
+    width: 40rem;
+}
+
+.philosophy-list {
+    border-left: .25rem solid #1565c0;
+    padding-left: 1.5rem;
+    text-align: left;
+    max-width: 55ch;
+    margin: 0 auto 3rem
+}
+
+.philosophy-list li {
+    margin-bottom: .8rem;
+    font-size: 1.125rem
+}
+
+@media (max-width: 929px) {
+    .metrics {
+        flex-flow: row wrap;
+        gap: 2rem;
+    }
+    .metric {
+        display: inline-block;
+    }
+}

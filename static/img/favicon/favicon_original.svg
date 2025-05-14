@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300"
+     viewBox="-10 0 90 90" fill="#1e88e5">
+    <text x="16" y="48"
+          font-family="Poppins, Arial, sans-serif"
+          font-size="44"
+          font-weight="700"
+          text-anchor="middle"
+          transform="translate(27,0) scale(-1,1)">R
+    </text>
+
+    <text x="32" y="48"
+          font-family="Poppins, Arial, sans-serif"
+          font-size="44"
+          font-weight="700"
+          text-anchor="middle">H
+    </text>
+
+    <text x="48" y="48"
+          font-family="Poppins, Arial, sans-serif"
+          font-size="44"
+          font-weight="700"
+          text-anchor="middle"
+          transform="translate(5,0)">R
+    </text>
+</svg>

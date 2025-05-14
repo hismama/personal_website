@@ -1,0 +1,94 @@
+.profile-panel {
+    min-width: 330px;
+    max-width: 480px;
+    padding: 5px;
+    background: var(--bg-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 36px rgba(var(--shadow-color), 0.05);
+    z-index: 5;
+}
+
+.profile-card {
+    text-align: center;
+}
+
+.profile-pic {
+    width: 100%;
+    height: 550px;
+    object-fit: cover;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
+    margin-bottom: 40px;
+}
+
+.profile-name {
+    font-size: 3rem;
+    margin: 0;
+}
+
+.profile-role {
+    font-size: 1.5rem;
+    color: var(--light-blue);
+    margin-bottom: 24px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 24px;
+}
+
+.social-icons img {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.2s;
+}
+
+.social-icons a:hover img {
+    transform: scale(1.4);
+}
+
+.profile-buttons {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.btn-line-top {
+    height: 1px;
+    background: linear-gradient(to right, rgb(var(--shadow-color),0), rgb(var(--shadow-color),0.1), rgb(var(--shadow-color),0));
+    margin-bottom: 0;
+}
+
+.btn-line-mid {
+    align-self: stretch;
+    width: 1px;
+    background: linear-gradient(to bottom, rgb(var(--shadow-color),0), rgb(var(--shadow-color),0.2), rgb(var(--shadow-color),0));
+    margin: 0;
+}
+
+.profile-buttons .btn {
+    flex: 1 1 45%;
+    background-color: var(--bg-color);
+    padding: 20px 0;
+    color: var(--text-color);
+    transition: background-color 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+}
+
+.profile-buttons .btn:hover {
+    background-color: var(--profile-buttons);
+    color: #0077cc;
+}
+
+.icon-profile {
+    width: 26px;
+    height: 26px;
+    margin-left: 10px;
+}

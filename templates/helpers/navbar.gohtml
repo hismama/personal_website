@@ -1,0 +1,22 @@
+{{define "navbar"}}
+        <a href="/" class="icon-nav {{ if eq .Path "/" }}active{{ end }}">
+            <img class="icon-house" src="/static/img/svg/house-solid.svg" title="Home" alt="House Icon">
+            Home
+        </a>
+        <a href="/about" class="icon-nav {{ if eq .Path "/about" }}active{{ end }}">
+            <img src="/static/img/svg/profile.svg" alt="About Profile" class="icon-about">
+            About
+        </a>
+        <a href="/resume" class="icon-nav {{ if eq .Path "/resume" }}active{{ end }}">
+            <img src="/static/img/svg/resume.svg" alt="Resume" class="icon-resume">
+            Resume
+        </a>
+        <a href="/projects" class="icon-nav {{ if eq .Path "/projects" }}active{{ end }}">
+            <img src="/static/img/svg/projects.svg" alt="Projects" class="icon-projects">
+            Projects
+        </a>
+        <a href="/game" class="icon-nav {{ if eq .Path "/game" }}active{{ end }}">
+            <img src="/static/img/svg/mouse.svg" alt="mouse icon" class="icon-game">
+            Game
+        </a>
+{{end}}

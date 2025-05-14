@@ -1,0 +1,52 @@
+.value-grid {
+    display: grid;
+    grid-template-columns:repeat(auto-fit, minmax(14rem, 1fr));
+    gap: 1.5rem;
+    padding: 0;
+}
+
+.value-grid li {
+    background: var(--pill-color);
+    border-radius: .5rem;
+    padding: 1.2rem;
+    font-size: 1rem;
+    line-height: 1.45;
+    box-shadow: 0 .25rem .5rem rgba(var(--shadow-color), .1);
+}
+
+.funfacts li {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    margin-bottom: 1rem;
+    font-size: 1.05rem;
+    line-height: 1.5;
+    transition: background-color 0.2s ease;
+    border-radius: 0.375rem;
+    padding: 0.5rem 0.75rem;
+}
+
+.funfacts li:hover {
+    background-color: rgba(var(--shadow-color), 0.03);
+}
+
+.icon-funfacts {
+    width: 2.5rem;
+    height: 2.5rem;
+    display: inline-block;
+    margin-right: 1rem;
+}
+
+@media (max-width: 929px) {
+    .funfacts li {
+        flex-flow: column nowrap;
+    }
+
+    .skills {
+        padding-bottom: 1rem;
+    }
+
+    .dash {
+        display: none;
+    }
+}

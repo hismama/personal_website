@@ -1,0 +1,42 @@
+.navbar {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    margin-right: 0.4rem;
+    gap: 20px;
+    width: 80px;
+    min-width: 80px;
+    height: auto;
+    background: var(--bg-color);
+    border-radius: 5px;
+    box-shadow: 0 4px 12px rgba(var(--shadow-color), 0.08);
+    padding: 20px 0;
+    z-index: 10;
+}
+
+.icon-nav img {
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.icon-nav:hover {
+    animation: bounce 0.6s ease infinite;
+}
+
+.navbar a {
+    font-size: 1.1rem;
+    text-align: center;
+    color: var(--text-color);
+    padding: 8px 5px;
+    border-radius: 2px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    background-color: var(--profile-buttons);
+    color: #0077cc;
+}

@@ -1,0 +1,14 @@
+.footer{
+    position: fixed;
+    bottom: 0.5rem;
+    text-align:center;
+    padding:1rem 0;
+    font-size:1rem;
+    color:#666;
+    border-top:1px solid rgba(var(--shadow-color),0.06);
+    margin-top:4rem;
+}
+.footer small{
+    display:block;
+    letter-spacing:1px;
+}

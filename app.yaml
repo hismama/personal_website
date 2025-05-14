@@ -1,0 +1,14 @@
+runtime: go122
+
+env_variables:
+  ENV: "prod"
+  Database_ID: "mrreidrichards"
+
+handlers:
+- url: /sitemap\.xml
+  static_files: static/sitemap.xml
+  upload: static/sitemap\.xml
+  mime_type: text/xml
+
+- url: /.*
+  script: _go_app

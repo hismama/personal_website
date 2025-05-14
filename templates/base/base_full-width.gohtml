@@ -1,0 +1,123 @@
+{{ define "base_fullwidth" }}
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>{{ block "title" . }}Default Title{{ end }}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description"
+              content="{{ block "description" . }}A dynamic yet minimal personal website built with Go. Fully server-rendered with real-time game state, randomized interactions, and zero JavaScript frameworks. Fast, responsive, and accessible.{{ end }}">
+        <meta property="og:title"
+              content="{{ block "og_title" . }}Default Title{{ end }}">
+        <meta property="og:description" content="{{ block "og_description" . }}Default site description.{{ end }}">
+        <meta name="twitter:title"
+              content="{{ block "twitter_title" . }}Default Title{{ end }}">
+        <meta name="twitter:description"
+              content="{{ block "twitter_description" . }}Default site description.{{ end }}">
+        <meta property="og:url" content="https://mrreidrichards.com"/>
+        <meta property="og:image" content="https://mrreidrichards.com/static/img/favicon/favicon-512x512.png"/>
+        <!-- Fav Icon -->
+        <link rel="icon" type="image/png" href="/static/img/favicon/favicon-96x96.png" sizes="96x96"/>
+        <link rel="icon" type="image/svg+xml" href="/static/img/favicon/favicon.svg"/>
+        <link rel="shortcut icon" href="/static/img/favicon/favicon.ico"/>
+        <link rel="apple-touch-icon" sizes="180x180" href="/static/img/favicon/apple-touch-icon.png"/>
+        <meta name="apple-mobile-web-app-title" content="ReidR"/>
+        <link rel="manifest" href="/static/img/favicon/site.webmanifest"/>
+        <!-- Style Sheets -->
+        {{ if .Prod }}
+            <link rel="stylesheet" href="/static/min/site.css">
+        {{ else }}
+            <link rel="stylesheet" href="/static/css/css-reset.css">
+            <link rel="stylesheet" href="/static/css/root.css">
+            <link rel="stylesheet" href="/static/css/nav.css">
+            <link rel="stylesheet" href="/static/css/profile.css">
+            <link rel="stylesheet" href="/static/css/content.css">
+            <link rel="stylesheet" href="/static/css/footer.css">
+            <link rel="stylesheet" href="/static/css/gopher-banner.css">
+            <link rel="stylesheet" href="/static/css/gopher-toast.css">
+            <link rel="stylesheet" href="/static/css/race-timer.css">
+            {{ block "head" . }}{{ end }}
+            <link rel="stylesheet" href="/static/css/main.css">
+        {{ end }}
+    </head>
+    <body>
+        <div class="beta-ribbon">UNDER&nbsp;CONSTRUCTION</div>
+        <aside id="gopher-banner" class="gopher-banner">
+            <img src="/static/img/gopher.png" alt="gopher" class="gopher-icon">
+            <div class="counts">
+                <div class="row">
+                    <span class="label">You</span>
+                    <span id="score-display" class="score s-green">{{ .Score | comma }}</span>
+                </div>
+                <div class="row">
+                    <span class="label">Site</span>
+                    <span id="total-count" class="score s-blue">{{ .TotalCatches | comma }}</span>
+                </div>
+            </div>
+        </aside>
+
+        <div class="race-flex" id="race-countdown">
+            <div class="race-status">
+                <svg class="ring" viewBox="0 0 100 100">
+                    <circle class="track" cx="50" cy="50" r="45"></circle>
+                    <circle class="progress" cx="50" cy="50" r="45"
+                            style="stroke-dashoffset: {{ .Spawn.TimerOffset }};
+                                    stroke: {{ .Spawn.TimerColor }};"></circle>
+                </svg>
+                <div class="timer-stack">
+                    <span id="race-timer" class="digits">{{ if .Spawn.RaceActive }}{{ .Spawn.TimeLeft }}{{ end }}</span>
+                    <span id="race-score"
+                          class="{{ if not .Spawn.RaceActive }}hidden{{ end }}">{{ .Spawn.RaceScore }}</span>
+                </div>
+            </div>
+        </div>
+
+        <div id="gopher-toast" class="toast">
+            <span class="toast-msg"></span>
+            <span class="firework fw-left"></span>
+            <span class="firework fw-right"></span>
+        </div>
+
+        <div class="fun-facts">
+            <span id="fact-box" class="fact card hidden"></span>
+        </div>
+
+        <div class="layout">
+
+            <nav class="navbar">
+                {{ template "navbar" . }}
+            </nav>
+
+
+            <aside class="profile-panel">
+                {{ template "profile" . }}
+            </aside>
+
+            <main class="fullwidth">
+                {{ block "content" . }}{{ end }}
+            </main>
+
+            <aside id="gopher-error" class="hidden"></aside>
+
+            {{/*            <footer class="footer">*/}}
+            {{/*                {{ template "footer" . }}*/}}
+            {{/*            </footer>*/}}
+
+        </div>
+        {{ if .Spawn.Spawn }}
+            <img id="boot-gopher"
+                 src="/static/img/gopher.png"
+                 class="gopher {{ if .Spawn.RaceActive }}moving-gopher{{ end }}"
+                 style="top:{{ .Spawn.Top }}vh; left:{{ .Spawn.Left }}vw;">
+        {{ end }}
+    </body>
+    <script>
+        window.GOPHER_BOOT = {
+            spawn:      {{ .Spawn.Spawn }},
+            raceActive: {{ .Spawn.RaceActive }},
+            timeLeft:   {{ .Spawn.TimeLeft }}
+        };
+    </script>
+    <script defer src="/static/js/gopher.js"></script>
+    </html>
+{{ end }}

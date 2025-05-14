@@ -1,0 +1,111 @@
+{{ define "title" }}About{{ end }}
+{{ define "og_title" }}About Reid Richards — Aerospace to Cloud Software{{ end }}
+{{ define "og_description" }}Minimal, blazing‑fast portfolio built with Go and Google Cloud. Projects, metrics, and a playful gopher hunt.{{ end }}
+{{ define "twitter_title" }}About Reid Richards — Aerospace to Cloud Software{{ end }}
+{{ define "twitter_description" }}Minimal, blazing‑fast portfolio built with Go and Google Cloud. Projects, metrics, and a playful gopher hunt.{{ end }}
+
+{{ define "head" }}
+    <link rel="stylesheet" href="/static/css/about.css">
+{{ end }}
+
+{{ define "content" }}
+
+    <section class="hero">
+        <h1 class="title">Turning Ideas into Elegant Systems</h1>
+        <p class="tag">
+            Aerospace Roots • Software Craft • Relentlessly Curious
+        </p>
+    </section>
+
+    <section class="summary card">
+        <h2>Logic-First, Creativity-Powered</h2>
+        <p>
+            I’ve always approached life like a puzzle: define constraints, map the system,
+            iterate toward elegant solutions. The same mindset took me from <strong>aerospace</strong>
+            engineering to full-stack software, and from <strong>debugging code</strong> to
+            <em>debugging real world logistics</em>.
+        </p>
+        <p>
+            Away from the keyboard, you’ll find me framing evening
+            <strong>landscape photos</strong>, chasing wild trout on a fly-rod, or
+            tinkering with lightweight desktop tools that scratch an itch, because the best
+            way to learn is to build.
+        </p>
+    </section>
+
+    <section class="values card">
+        <h2>What Drives Me</h2>
+        <ul class="value-grid">
+            <li><strong>Clarity first</strong><br>Write code a future teammate will thank you for.</li>
+            <li><strong>Performance matters</strong><br>Fast sites show respect for users’ time.</li>
+            <li><strong>Release thoughtfully</strong><br>Iterate quickly; polish precisely.</li>
+            <li><strong>Lifelong learning</strong><br>Each year brings a new language or fresh perspective.</li>
+        </ul>
+    </section>
+
+    <section class="funfacts card">
+        <h2>Beyond Code</h2>
+        <ul>
+            <li>
+                <img src="/static/img/svg/funfacts/bsa.svg" alt="Boy Scout Logo" class="icon-funfacts">
+                <strong>Eagle Scout</strong><span class="dash" aria-hidden="true">—</span>happiest on a trail.
+            </li>
+            <li>
+                <img src="/static/img/svg/funfacts/camper-van.svg" alt="Camper Van Icon" class="icon-funfacts">
+                <strong>Camper-van builder</strong><span class="dash" aria-hidden="true">—</span>turned a RAM ProMaster
+                into a mobile home.
+            </li>
+            <li>
+                <img src="/static/img/svg/funfacts/fly-fish.svg" alt="Trout Fishing Icon" class="icon-funfacts">
+                <strong>Fly-fisher</strong><span class="dash" aria-hidden="true">—</span>patience and reading the river
+                for the perfect strike.
+            </li>
+            <li>
+                <img src="/static/img/svg/funfacts/scuba-diving.svg" alt="Diving Mask Icon" class="icon-funfacts">
+                <strong>SCUBA Diver</strong><span class="dash" aria-hidden="true">—</span>favorite dive: hammerheads in
+                Galápagos.
+            </li>
+            <li>
+                <img src="/static/img/svg/funfacts/desktop.svg" alt="Desktop Computer Icon" class="icon-funfacts">
+                <strong>Desktop tinkerer</strong><span class="dash" aria-hidden="true">—</span>build sub-5 MB tools for
+                utility.
+            </li>
+            <li>
+                <img src="/static/img/svg/funfacts/landscape.svg" alt="Panorama Icon" class="icon-funfacts">
+                <strong>Landscape photographer</strong><span class="dash" aria-hidden="true">—</span>chase golden-hour
+                light on hikes.
+            </li>
+            <li>
+                <img src="/static/img/svg/funfacts/swimming.svg" alt="Person Swimming Icon" class="icon-funfacts">
+                <strong>Lap swimmer</strong><span class="dash" aria-hidden="true">—</span>a morning kilometre clears the
+                mind.
+            </li>
+            <li>
+                <img src="/static/img/svg/funfacts/printer.svg" alt="Printer Icon" class="icon-funfacts">
+                <strong>3D-printer maker</strong><span class="dash" aria-hidden="true">—</span>built one from scratch to
+                prototype parts.
+            </li>
+        </ul>
+    </section>
+
+    <section class="skills card">
+        <h2>Tech Stack Snapshot</h2>
+        <ul class="pill-grid">
+            <li>Python</li>
+            <li>Go</li>
+            <li>Django</li>
+            <li>TypeScript</li>
+            <li>JavaScript</li>
+            <li>AWS</li>
+            <li>Docker</li>
+            <li>Redis</li>
+            <li>Celery</li>
+            <li>SQL</li>
+            <li>Git</li>
+            <li>Jenkins</li>
+        </ul>
+    </section>
+
+{{ end }}
+
+{{ template "base_fullwidth" . }}

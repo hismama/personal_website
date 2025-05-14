@@ -1,0 +1,219 @@
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+html, body {
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+.beta-ribbon {
+    position: fixed;
+    top: 3rem;
+    right: -3.5rem;
+    padding: 0.3rem 4rem;
+    background: #1dd3b0;
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 600;
+    transform: rotate(45deg);
+    box-shadow: 0 0.3rem 0.6rem rgba(var(--shadow-color), 0.15);
+    z-index: 100;
+    opacity: 0.8;
+}
+
+body {
+    padding-top: 8rem;
+    background: var(--bg-gradient);
+    font-family: 'Poppins', sans-serif;
+    cursor: default;
+}
+
+.layout {
+    display: flex;
+    flex-flow: row nowrap;
+    height: 67vh;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-strip {
+    height: .5rem;
+    width: 18rem;
+    margin: .75rem auto 1.8rem;
+    background: linear-gradient(90deg, #1dd3b0, #93f9b9);
+    border-radius: 9999px;
+}
+
+em {
+    font-style: italic;
+}
+
+strong {
+    font-weight: 800;
+}
+
+.fun-facts {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    width: auto;
+    min-width: 54rem;
+    bottom: 12vh;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 175;
+}
+
+#fact-box {
+    position: relative;
+    justify-content: center;
+    box-shadow: 5px 12px 32px rgba(var(--shadow-color), 0.12);
+    border-radius: 16px;
+}
+
+#fact-box::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: -2px;
+    right: -2px;
+    bottom: -2px;
+    left: -2px;
+    border-radius: inherit;
+    background: linear-gradient(120deg, var(--dark-blue), rgba(116, 192, 252, 0.5));
+}
+
+.gopher {
+    position: absolute;
+    width: 7rem;
+    height: auto;
+    cursor: pointer;
+    z-index: 200;
+    filter: drop-shadow(.35rem .35rem 6px rgba(var(--shadow-color), .55)) drop-shadow(-.25rem -.25rem 4px rgba(var(--shadow-color), .25)) drop-shadow(0 0 4px rgba(255, 255, 255, .45));
+}
+
+.moving-gopher {
+    animation: drift 1.5s infinite linear alternate;
+}
+
+#gopher-error {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #f44336;
+    color: white;
+    font-size: 1rem;
+    padding: 4px 8px;
+}
+
+.hidden {
+    display: none;
+}
+
+small {
+    font-size: clamp(0.4rem, 0.5rem + 1.1vw, 1.25rem);
+}
+
+@media (max-width: 929px) {
+    html, body {
+        height: auto;
+        overflow-y: visible;
+    }
+
+    body {
+        padding-top: 10px;
+    }
+
+    .fun-facts {
+        top: 25vh;
+        bottom: unset;
+        width: 90vw;
+        min-width: 0;
+        height: auto;
+    }
+
+    #fact-box {
+        padding: 1rem;
+    }
+
+    /* stacks everything vertically */
+    .layout {
+        display: flex;
+        flex-flow: column nowrap;
+        height: 100%;
+    }
+
+    /* footer moves to top */
+    .footer {
+        order: 0;
+        width: 100%;
+        position: relative;
+        text-align: center;
+        padding: 1rem 0;
+        margin: 0;
+        border-top: none;
+        border-bottom: 1px solid rgba(var(--shadow-color), 0.06);
+    }
+
+    .profile-panel {
+        order: 1;
+        max-width: none;
+        box-shadow: none;
+        border-bottom: 1px solid #eee;
+        margin-bottom: 1rem;
+    }
+
+    .profile-pic {
+        height: 16rem;
+        object-position: 50% 30%;
+    }
+
+    .profile-name {
+        font-size: 2rem;
+    }
+
+    .profile-role {
+        font-size: 1rem;
+    }
+
+    .navbar {
+        order: 3;
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 60px;
+        background: var(--bg-color);
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-around;
+        align-items: center;
+        box-shadow: 0 -2px 8px rgba(var(--shadow-color), 0.1);
+        z-index: 10;
+        gap: 0;
+    }
+
+    .navbar a {
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+    }
+
+    .gopher {
+        position: absolute;
+        width: 5rem;
+    }
+}

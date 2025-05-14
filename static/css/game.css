@@ -1,0 +1,121 @@
+.scoreboard {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 0.4fr 5ch;
+    column-gap: 2rem;
+    justify-content: center;
+    row-gap: 1.5rem;
+    padding: 5.2rem 1.8rem;
+    margin: 1.5rem auto;
+}
+
+.score-row {
+    font-size: 1rem;
+    display: contents;
+}
+
+.game-label {
+    font-size: 1.9rem;
+    font-weight: 700;
+    color: #374151;
+    text-align: left;
+}
+
+.score-value {
+    font-size: 1.9rem;
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+}
+
+.score-icon {
+    width: 1.1rem;
+    height: 1.1rem;
+    margin-right: .4rem;
+    vertical-align: -2px
+}
+
+.gopher-frame {
+    position: relative;
+    overflow: hidden;
+}
+
+.gopher-frame::before,
+.gopher-frame::after,
+.gopher-frame > .gopher-bl,
+.gopher-frame > .gopher-br {
+    content: '';
+    position: absolute;
+    width: 3rem;
+    height: 3rem;
+    background: url('/static/img/svg/gopher.svg') no-repeat center/contain;
+    pointer-events: none;
+}
+
+.gopher-frame::before {
+    top: .25rem;
+    left: .25rem;
+    transform-origin: center center;
+    animation: spincw 2s linear infinite;
+}
+
+.gopher-frame::after {
+    top: .25rem;
+    right: .25rem;
+    transform: scaleX(-1);
+    transform-origin: center center;
+    animation: spinccw 2s linear infinite;
+}
+
+.gopher-frame > .gopher-bl {
+    bottom: .25rem;
+    left: .25rem;
+    transform: scaleX(-1) scaleY(-1);
+    transform-origin: center center;
+    animation: spincw 2s linear infinite;
+}
+
+.gopher-frame > .gopher-br {
+    bottom: .25rem;
+    right: .25rem;
+    transform: scaleY(-1);
+    transform-origin: center center;
+    animation: spinccw 2s linear infinite;
+}
+
+#start-race-btn {
+    font-size: 1.25rem;
+    color: white;
+    font-weight: 700;
+    margin-top: 3rem;
+    padding: 1rem 2rem;
+    background-color: var(--light-blue);
+    border-radius: 5px;
+}
+
+#start-race-btn:hover {
+    background-color: var(--dark-blue);
+}
+
+@keyframes spincw {
+    from {
+        transform: rotate(0)
+    }
+    to {
+        transform: rotate(360deg)
+    }
+}
+
+@keyframes spinccw {
+    from {
+        transform: rotate(0)
+    }
+    to {
+        transform: rotate(-360deg)
+    }
+}
+
+@media (max-width: 929px) {
+    .scoreboard {
+        margin-top: 5rem;
+    }
+}

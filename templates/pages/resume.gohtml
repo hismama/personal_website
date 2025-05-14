@@ -1,0 +1,102 @@
+{{ define "title" }}Resume{{ end }}
+{{ define "description" }}Full-stack software engineer resume – mission-driven, cloud-ready, and performance obsessed.{{ end }}
+{{ define "og_title" }}Reid Richards Resume{{ end }}
+{{ define "og_description" }}Explore Reid Richards' resume – a full-stack engineer with aerospace roots and SaaS at scale.{{ end }}
+{{ define "twitter_title" }}Reid Richards Resume{{ end }}
+{{ define "twitter_description" }}Explore Reid Richards' resume – a full-stack engineer with aerospace roots and SaaS at scale.{{ end }}
+
+{{ define "head" }}
+    <link rel="stylesheet" href="/static/css/resume.css">
+{{ end }}
+
+{{ define "content" }}
+    <section class="hero">
+        <h1 class="title">Mission-Driven Engineer</h1>
+        <p class="tag">
+            Aerospace-trained • Cloud-hardened • Fanatical about performance
+        </p>
+    </section>
+
+    <section class="summary card">
+        <h2>Quick Profile</h2>
+        <p>
+            I’m a full-stack developer who transitioned from QA and project engineering to
+            building <strong>global SaaS platforms</strong> for the pharmaceutical supply
+            chain. I thrive at the intersection of <em>regulatory compliance</em> and
+            <em>high-performance web systems</em>, using Python, Django, Redis, Celery, and a deep AWS toolset.
+        </p>
+    </section>
+
+    <section class="resume-timeline card">
+        <h2>Career Highlights</h2>
+
+        <div class="timeline-item">
+            <span class="tl-year">2024 – Now</span>
+            <div class="tl-body">
+                <h3>Systech <span class="dash" aria-hidden="true">–</span> <span
+                            class="timeline-break"></span>Software Engineer</h3>
+                <ul>
+                    <li>Full-stack feature lead, on a recurring-revenue SaaS product.</li>
+                    <li>Integrated openFDA and NABP APIs to expand regulatory traceability and automate compliance validation.</li>
+                    <li>Led development of modular XML exception validation engine with 150+ configurable checks, XSD support, and per-check severity controls.</li>
+                    <li>Designed XML-based serial import tool to prevent re-provisioning during competitive system migrations, streamlining customer onboarding.</li>
+                    <li>Average <strong>18 story points / sprint</strong> across 30+ sprints.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <span class="tl-year">2020 – 2024</span>
+            <div class="tl-body">
+                <h3>Systech <span class="dash" aria-hidden="true">–</span> <span
+                            class="timeline-break"></span>QA Automation Lead</h3>
+                <ul>
+                    <li>Cut manual test time by <strong>80 %</strong> with Robot Framework & Selenium.</li>
+                    <li>Created Jenkins REST Automation cutting config adjustments from days to seconds.</li>
+                    <li>Championed DSCSA compliance; ensured zero Sev-1 incidents at launch.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <span class="tl-year">2014 – 2018</span>
+            <div class="tl-body">
+                <h3>Grenzebach <span class="dash" aria-hidden="true">–</span> <span
+                            class="timeline-break"></span>inos Automation Engineer</h3>
+                <ul>
+                    <li>Commissioned FANUC/Kawasaki vision robots for global auto OEMs.</li>
+                    <li>Adapted quickly to shifting priorities and field challenges to consistently deliver projects on time and within budget.</li>
+                    <li>Managed on-site installs, budgets, and cross-cultural teams.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="skills card">
+        <h2>Tech Stack Snapshot</h2>
+        <ul class="pill-grid">
+            <li>Python</li>
+            <li>Go</li>
+            <li>Django</li>
+            <li>TypeScript</li>
+            <li>JavaScript</li>
+            <li>AWS</li>
+            <li>Docker</li>
+            <li>Redis</li>
+            <li>Celery</li>
+            <li>MySQL</li>
+            <li>Git</li>
+            <li>Jenkins</li>
+        </ul>
+    </section>
+
+    <section class="resume-extras card">
+        <h2>Beyond Code</h2>
+        <p>
+            •&nbsp;Eagle Scout (2007) •&nbsp;Licensed SCUBA&nbsp;Diver •&nbsp;Volunteer board member for
+            <em>Books Are the Beginning</em> •&nbsp;Built and tuned a homemade 3-D&nbsp;printer.
+        </p>
+    </section>
+{{ end }}
+
+{{ template "base_fullwidth" . }}
