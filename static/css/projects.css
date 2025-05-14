@@ -98,7 +98,7 @@
 }
 
 .proj-highlights ul {
-    gap: .75rem 2.5rem;
+    gap: 1.2rem 2.5rem;
     margin: 0;
     padding-left: 0.7rem;
     display: grid;
@@ -108,6 +108,7 @@
 .proj-highlights li {
     list-style: disc;
     font-size: var(--p-size);
+    line-height: 1.5;
 }
 
 /* Project Tag Pills */

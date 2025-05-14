@@ -1,31 +1,37 @@
 {{ define "profile" }}
 
     <div class="profile-card">
-        <img  class="profile-pic" src="/static/img/reid-headshot_bio.jpg" alt="Photo of Reid Richards">
+        <img class="profile-pic" src="/static/img/reid-headshot_bio.jpg" alt="Photo of Reid Richards">
 
-        <h1 class="profile-name">Reid Richards</h1>
-        <p class="profile-role">Full-stack Developer</p>
+        <div class="profile-info">
+            <h1 class="profile-name">Reid Richards</h1>
+            <p class="profile-role">Full-stack Developer</p>
 
-        <div class="social-icons">
-            <a href="https://www.linkedin.com/in/reid-richards-918aa876/" target="_blank" rel="noopener noreferrer"><img
-                        src="/static/img/svg/LinkedIn_icon.svg" alt="LinkedIn" title="LinkedIn Account"></a>
-            <a href="https://github.com/hismama" target="_blank" rel="noopener noreferrer"><img src="/static/img/svg/github.svg" alt="GitHub"
-                                                                      title="GitHub Account"></a>
-            <a href="mailto:reid@mrreidrichards.com?subject=Hello%20Reid" title="Email Reid" target="_blank"><img
-                        src="/static/img/svg/email.svg" alt="Email"></a>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/reid-richards-918aa876/" target="_blank" rel="noopener noreferrer"><img
+                            src="/static/img/svg/LinkedIn_icon.svg" alt="LinkedIn" title="LinkedIn Account"></a>
+                <a href="https://github.com/hismama" target="_blank" rel="noopener noreferrer"><img
+                            src="/static/img/svg/github.svg" alt="GitHub"
+                            title="GitHub Account"></a>
+                <a href="mailto:reid@mrreidrichards.com?subject=Hello%20Reid" title="Email Reid" target="_blank"><img
+                            src="/static/img/svg/email.svg" alt="Email"></a>
+            </div>
         </div>
 
-        <div class="btn-line-top"></div>
-        <div class="profile-buttons">
-            <a href="https://cdn.mrreidrichards.com/mrreidrichards/Reid_Richards-Resume-Website.pdf" target="_blank" class="btn" title="PDF Resume">
-                Download CV
-                <img src="/static/img/svg/download.svg" alt="Download Icon" class="icon-download icon-profile">
-            </a>
-            <div class="btn-line-mid"></div>
-            <a href="/contact" class="btn" title="Contact Page">
-                Contact Me
-                <img src="/static/img/svg/at.svg" alt="@ symbol" class="icon-contact icon-profile">
-            </a>
+        <div class="profile-footer">
+            <div class="btn-line-top"></div>
+            <div class="profile-buttons">
+                <a href="https://cdn.mrreidrichards.com/mrreidrichards/Reid_Richards-Resume-Website.pdf" target="_blank"
+                   class="btn" title="PDF Resume">
+                    Download&nbsp;CV
+                    <img src="/static/img/svg/download.svg" alt="Download Icon" class="icon-download icon-profile">
+                </a>
+                <div class="btn-line-mid"></div>
+                <a href="/contact" class="btn" title="Contact Page">
+                    Contact&nbsp;Me
+                    <img src="/static/img/svg/at.svg" alt="@ symbol" class="icon-contact icon-profile">
+                </a>
+            </div>
         </div>
     </div>
 {{ end }}

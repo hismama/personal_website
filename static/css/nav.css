@@ -22,10 +22,6 @@
     transition: transform 0.3s ease;
 }
 
-.icon-nav:hover {
-    animation: bounce 0.6s ease infinite;
-}
-
 .navbar a {
     font-size: 1.1rem;
     text-align: center;

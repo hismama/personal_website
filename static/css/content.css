@@ -11,7 +11,7 @@
 
 .fullwidth {
     flex: 1;
-    max-height: 62vh;
+    max-height: 67vh;
     padding: 20px 40px 10px 40px;
     background: var(--bg-color);
     border-radius: .75rem;

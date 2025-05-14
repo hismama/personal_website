@@ -37,13 +37,9 @@
     margin-right: 1rem;
 }
 
-@media (max-width: 929px) {
+@media (max-width: 1255px) {
     .funfacts li {
         flex-flow: column nowrap;
-    }
-
-    .skills {
-        padding-bottom: 1rem;
     }
 
     .dash {
